@@ -1,0 +1,13 @@
+[Client{bg:pink}]-[Tournament{bg:turquoise}]-[Game{bg:turquoise}]-[Score{bg:turquoise}]
+[Tournament]-[Team{bg:turquoise}] 
+[Tournament]-[Score]
+
+[Client|main(StringArray)]
+
+[Team| +name:string; -playersNum:int; +teamId: int| na]
+
+[Score| +scoreTable: intArray; | +printScore(); +addWinGameForTeam(Team); sortScoreTable(); getWinningTeams();]
+
+[Game| +teamA: Team; +teamB: Team; -winningTeam: Team | +startGame(); +setScore();]
+
+[Tournament| +numOfGames:int; +teamList : ArrayListTeam; | +runAllGames(); +medalCeromony()]
